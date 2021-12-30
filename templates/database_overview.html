@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="author" content="Beth Culler">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Oracle DB Summary </title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}" />
+    <style>
+
+      #container1 {
+        position:relative;
+        width: 100%;
+      }
+
+      #sidenav {
+        width: 260px;
+        background-color: #eaf6f6;
+        padding-top: 20px;
+        position:absolute;
+        top:0;
+        left:0;
+        bottom:0;
+      }
+
+      #sidenav a {
+        padding: 6px 8px 6px 16px;
+        text-decoration: none;
+        font-size: 15px;
+        color: #818181;
+        display: block;
+      }
+
+      #sidenav a:hover {
+        color: #000000;
+      }
+
+      #stickynav {
+        position: -webkit-sticky; /* Safari & IE */
+        position: sticky;
+        top: 95px;
+      }
+
+      table {
+        font-family: arial, sans-serif;
+        font-size:15px;
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 60%;
+        margin-right: auto;
+        margin-left: auto;
+        box-shadow: 1px 1px 2px grey;
+      }
+
+      td, th {
+        border: 2px solid #dddddd;
+        text-align: left;
+        padding: 5px;
+      }
+
+     // tr:nth-child(even) {background-color: #fafafa;}
+
+      caption {
+        font-style: bold;
+        font-size: 20px;
+        color: #407088;
+        padding-bottom: 1%;
+        padding-top: 3%;
+      }
+
+      #main {
+        margin-left: 260px; 
+        position: relative;
+      }
+
+      .grph {
+        display: block;
+        margin-left:auto;
+        margin-right:auto;
+        margin-bottom:1.5%;
+        width:63%;
+        object-fit:cover;
+      }
+
+      h5 {
+        margin-top: 5%;
+        text-align: center;
+      }
+
+      .btn {
+        font-size: 15px;
+        padding: 5px 20px;
+        text-align:center;
+        margin-left:95px;     
+        margin-top:2%;
+      }
+
+      .btn2 {
+        background-color: #407088;
+        color: white;
+        border: none;
+        border-radius: 2px;
+        font-size: 17px;
+        padding: 5px 20px;
+        text-align:center;
+        display: block;
+        margin-top: 1.5%;
+        margin-bottom: 1.5%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .btn2:hover {
+        background-color: #132743;
+        color: white;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container"> 
+        <div id="chs_logo">
+        </div>
+        <div id="title">
+          <h2> Oracle Database Summary </h2>
+        </div>
+      </div>
+    </div>
+    <div id="container1">
+      <div id="sidenav">
+        <div id="stickynav">
+          <ul>
+            <li><a href="*********">Homepage - RDBMS Dashboard Summaries </a></li>
+            <li><a href="/Oracle"><strong>Oracle Database Summary</strong></a></li>
+            <li><a href="*********" target="_blank" rel="noopener noreferrer">Current DB Performance Status</a></li>
+            <li><a href="*********" target="_blank" rel="noopener noreferrer">Oracle WIKI</a></li>
+            <li><a href="*********g" target="_blank" rel="noopener noreferrer">Oracle Engineering Standards</a></li>
+            <li><a href="*********" target="_blank" rel="noopener noreferrer">Oracle Dashboard README</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="bottom-wrapper">
+        <div id="main">
+          <p style="padding:5px; padding-bottom:6px; padding-top:3%; text-indent:60px; font-size:25px" id="top"> {{ dbname }} Overview </p>
+          <table style="margin-bottom:20px">
+            <caption>Diskgroup Usage <br> <p style="font-size:15px; text-align:center; padding:1%; color:black"><i> Last Updated: {{ data1[0][0] }}</i> </p> </caption>
+            <tr>
+              <th>DISKGROUP NAME</th>
+              <th>TOTAL SIZE GB</th>
+              <th>USED SIZE GB</th>
+              <th>% USED</th>
+            </tr>
+            {% for item in data1 %}
+              <tr>
+                <td> <a href="{{ url_for('.get_db_info', dbname=dbname, _anchor=item[1]) }}">{{item[1]}}</a></td>
+                <td>{{item[2]}}</td>
+                <td>{{item[3]}}</td>
+                <td>{{item[4]}}</td>
+              </tr>
+            {% endfor %}
+          </table>
+          <table style="margin-bottom:20px">
+            <caption> Tablespace Usage <br> <p style="font-size:15px; text-align:center; padding-top:1%; color:black"><i> Last Updated: {{ data[0][0] }}</i> </p> <br> <p style="font-size:18px; text-align:center; color:black; padding-bottom:1%"><strong> TOTAL db_files:</strong> {{ dbfiles[1] }} </p> <p style="font-size:17px; text-align:center;padding-top:0px; padding-bottom:2%; color:black"> MAX db_files: {{ dbfiles[0] }} </p></caption>
+            <tr>
+              <th>TABLESPACE NAME</th>
+              <th>TOTAL SIZE GB</th>
+              <th>USED SIZE GB</th>
+              <th>% USED</th>
+            </tr>
+            {% for item in data %}
+              <tr>
+                <td><a href="{{ url_for('.get_db_info', dbname=dbname, _anchor=item[1]) }}">{{item[1]}}</a></td>
+                <td>{{item[2]}}</td>
+                <td>{{item[3]}}</td>
+                <td>{{item[4]}}</td>
+              </tr>
+            {% endfor %}
+          </table>
+          <p style="padding:5px; padding-bottom:6px; padding-top:5%; text-indent:60px; font-size:25px"> {{ dbname }}: Diskgroup Growth Trends </p>
+          {% for item in data1 %} 
+            <button id={{item[1]}} class="btn" onclick="window.location.href='{{ url_for('.get_db_info', dbname=dbname, _anchor='top') }}';"> Back to the top </button> 
+            <h5> {{item[1]}} Size <br>(30 Day Window) </h5>
+            <button class="btn2" onclick="window.location.href='{{ url_for('.get_dg_history', dg_name=item[1], dbname=dbname) }}';"> Historical View </button>
+            <img src= "/static/{{item[1]}}.jpg" alt="{{item[1]}} 30 DAY GROWTH TREND LINE GRAPH" class="grph">
+          {% endfor %}
+          <p style="padding:5px; padding-bottom:6px; padding-top:5%; text-indent:60px; font-size:25px"> {{ dbname }}: Tablespace Growth Trends </p>
+          {% for item in data %}
+            <button id={{item[1]}} class="btn" onclick="window.location.href='{{ url_for('.get_db_info', dbname=dbname, _anchor='top') }}';"> Back to the top </button>
+            <h5> {{item[1]}} Size <br>(30 Day Window) </h5>
+            <button class="btn2" onclick="window.location.href='{{ url_for('.get_tb_history', tb_name=item[1], dbname=dbname) }}';"> Historical View </button>
+            <img src= "/static/{{dbname}}_{{item[1]}}.jpg" alt="{{item[1]}} 30 DAY GROWTH TREND LINE GRAPH" class="grph">
+            <table style="margin-bottom:20px">
+              <caption> {{item[1]}} Datafiles <br> <p style="font-size:15px; text-align:center; padding-top:1%; color:black"><i> Last Updated: {{ data[0][0] }}</i> </caption>
+              <tr>
+                <th>TABLESPACE NAME</th>
+                <th>DATAFILE NAME</th>
+                <th>CREATION DATE</th>
+              </tr>
+              {% for df in datafiles %}
+                {% if item[1] == df[0] %}
+                  <tr>
+                    <td>{{df[0]}}</td>
+                    <td>{{df[1]}}</td>
+                    <td>{{df[2]}}</td>
+                  </tr>
+                {% endif %}
+              {% endfor %}
+            </table>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
