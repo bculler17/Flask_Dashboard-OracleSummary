@@ -67,9 +67,7 @@ The new database will now be visible on the Oracle dashboard
 
 Some of the information may be missing, but everything on the homepage that is missing will be automatically populated the next time the bash scripts: it-reaches-out.sh and tablespace_growth_trender.sh execute.
 
-The Diskgroup information will be automatically populated the next time the following script executes:
-
-coll_asm_usage.sh (this is not my script, so it is not listed here)
+The Diskgroup information is automatically populated by a script that is not my own, so it is not listed here.
 
 
 How to Remove a Server or Database from the Dashboard
