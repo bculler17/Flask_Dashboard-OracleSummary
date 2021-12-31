@@ -39,8 +39,6 @@ Some of the information may be missing, but what is missing on the homepage will
 
 How To Add New Databases to the Dashboard:
   
-To add a new Oracle database to the dashboard, simply do the following:
-
 
 1. Insert the new database information into oracle_databases database table using the following syntax:
 
@@ -70,8 +68,9 @@ Some of the information may be missing, but everything on the homepage that is m
 The Diskgroup information is automatically populated by a script that is not my own, so it is not listed here.
 
 
-How to Remove a Server or Database from the Dashboard
-To remove a server or database from the dashboard, simply set status='INACTIVE':
+How to Remove a Server or Database from the Dashboard:
+	
+To remove a server or database from the dashboard, simply set status='INACTIVE'.
 
 To Remove a Server:
 
