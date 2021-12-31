@@ -49,14 +49,14 @@ If status does not = 'ACTIVE', it will not appear on the dashboard.
 2-NODE RAC:
 
 
-insert into oracle_databases (id, name, node1, node2, status, application_name, record_creator) VALUES (oracle_databases_id_seq.nextval,'<INSERT DB NAME>', '<INSERT 1st node's hostname>', '<INSERT 2nd node's hostname>', 'ACTIVE', '<INSERT APPLICATION NAME THAT WILL BE USING THIS DATABASE*>', '<INSERT First_name Last_inital>';
+SQL> insert into oracle_databases (id, name, node1, node2, status, application_name, record_creator) VALUES (oracle_databases_id_seq.nextval,'<INSERT DB NAME>', '<INSERT 1st node's hostname>', '<INSERT 2nd node's hostname>', 'ACTIVE', '<INSERT APPLICATION NAME THAT WILL BE USING THIS DATABASE*>', '<INSERT First_name Last_inital>';
 
 SQL> commit;
 
 1-NODE RAC or standalone:
 
 
-insert into oracle_databases (id, name, node1, status, application_name, record_creator) VALUES (oracle_databases_id_seq.nextval,'<INSERT DB NAME>', '<INSERT NODE'S HOSTNAME>', 'ACTIVE', '<INSERT APPLICATION NAME THAT WILL BE USING THIS DATABASE*>', '<INSERT First_name Last_inital>';
+SQL> insert into oracle_databases (id, name, node1, status, application_name, record_creator) VALUES (oracle_databases_id_seq.nextval,'<INSERT DB NAME>', '<INSERT NODE'S HOSTNAME>', 'ACTIVE', '<INSERT APPLICATION NAME THAT WILL BE USING THIS DATABASE*>', '<INSERT First_name Last_inital>';
 
 SQL> commit;
 
@@ -72,16 +72,8 @@ How to Remove a Server or Database from the Dashboard:
 	
 To remove a server or database from the dashboard, simply set status='INACTIVE'.
 
-To Remove a Server:
-
-EXAMPLE:
-
 
 SQL> udpate oracle_servers set status='INACTIVE', record_updated_by='Beth C.', record_updated=sysdate where hostname='<SERVER HOSTNAME TO REMOVE>';
-
-To Remove a Database:
-
-EXAMPLE:
 
 
 SQL> udpate oracle_databases set status='INACTIVE', record_updated_by='Beth C.', record_updated=sysdate where name='<DB NAME TO REMOVE>';
