@@ -9,10 +9,10 @@ Database Tables Used to Populate Dashboard:
 
 The Oracle Dashboard pulls its data from five different database tables in an Oracle database  : oracle_databases, oracle_servers, asmsize_trend, oracle_datafiles and oracle_tablespaces. Each of these tables are automatically populated by the following scripts, and refreshed once an hour: 
 
-[it-reaches-out.sh](https://github.com/bculler17/Oracle_Bash_Scripts/scripts/availability_monitor/it_reaches_out.sh)
+[it-reaches-out.sh](https://github.com/bculler17/Oracle_Bash_Scripts/blob/main/scripts/availability_monitor/it_reaches_out.sh)
 
                                         
-[tablespace_growth_trender.sh](https://github.com/bculler17/Oracle_Bash_Scripts/scripts/tablespace_growth_trender.sh)
+[tablespace_growth_trender.sh](https://github.com/bculler17/Oracle_Bash_Scripts/blob/main/scripts/tablespace_growth_trender.sh)
 
 					
 How To Add New Servers to the Dashboard:
