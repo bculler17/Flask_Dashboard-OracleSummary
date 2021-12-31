@@ -3,7 +3,7 @@ I developed this dashboard to provide a high-level summary of a large Oracle env
 
 DEMO can be viewed here: (coming soon)
 
-Tools used: Python, SQL, html, css, Flask Web framework
+Tools used: Python, SQL, html, css, Flask Web framework, Bash
 
 Database Tables Used to Populate Dashboard:
 
