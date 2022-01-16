@@ -24,14 +24,26 @@ body {
   max-width: 100%;
   height: auto;
   flex: auto;
+  display: flex;
+  justify-content:center;
+  align-items: center;
 }
 
-#chs_logo {
-  max-width: 100%;
+#company_logo {
+  /*max-width: 100%;
   height: auto;
-  background-image: url('./logo.jpg');
-  background-size: contain;
-  background-repeat: no-repeat;
+  background-image: url('../companylogo.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;*/
+  background-color:#407088;
+  background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
+  color:white;
+  max-width: 20%;
+  height:auto;
+  font-size: 0.6em;
+  display: flex;
+  justify-content:center;
+  align-items: center;
 }
 
 #title {
@@ -91,3 +103,170 @@ a:active {
   color: #2772db;
   text-decoration: none;
 }
+
+#container1 {
+        position:relative;
+        width: 100%;
+      }
+
+      #sidenav {
+        width: 260px;
+        background-color: #eaf6f6;
+        padding-top: 20px;
+        position:absolute;
+        top:0;
+        left:0;
+        bottom:0;
+      }
+
+      #sidenav a {
+        padding: 6px 8px 6px 16px;
+        text-decoration: none;
+        font-size: 15px;
+        color: #818181;
+        display: block;
+      }
+
+      #sidenav a:hover {
+        color: #000000;
+      }
+
+      #stickynav {
+        position: -webkit-sticky; /* Safari & IE */
+        position: sticky;
+        top: 95px;
+      }
+
+      table {
+        font-family: arial, sans-serif;
+        font-size:15px;
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 60%;
+        margin-right: auto;
+        margin-left: auto;
+        box-shadow: 1px 1px 2px grey;
+      }
+
+      td, th {
+        border: 2px solid #dddddd;
+        text-align: left;
+        padding: 5px;
+      }
+
+      caption {
+        font-style: bold;
+        font-size: 20px;
+        color: #407088;
+        padding-bottom: 1%;
+        padding-top: 3%;
+      }
+
+      #main {
+        margin-left: 260px; 
+        position: relative;
+      }
+
+      .grph {
+        display: block;
+        margin-left:auto;
+        margin-right:auto;
+        margin-bottom:1.5%;
+        width:63%;
+        object-fit:cover;
+      }
+
+      h5 {
+        margin-top: 5%;
+        text-align: center;
+      }
+
+      .btn {
+        font-size: 15px;
+        padding: 5px 20px;
+        text-align:center;
+        margin-left:95px;     
+        margin-top:2%;
+      }
+
+      .btn2 {
+        background-color: #407088;
+        color: white;
+        border: none;
+        border-radius: 2px;
+        font-size: 17px;
+        padding: 5px 20px;
+        text-align:center;
+        display: block;
+        margin-top: 1.5%;
+        margin-bottom: 1.5%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .btn2:hover {
+        background-color: #132743;
+        color: white;
+      }
+      
+      .hovertext {
+        position: relative;
+        border-bottom: 1px dotted black;
+      }
+
+      .hovertext:before {
+        content: attr(data-hover);
+        visibility: hidden;
+        opacity: 0;
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        font-size:18px;
+        border-radius: 5px;
+        padding: 5px 0;
+        transition: opacity 1s ease-in-out;
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        top: 110%;
+      }
+
+      .hovertext:hover:before {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .hovertext1 {
+        position: relative;
+        border-bottom: 1px dotted black;
+        font-size: 20px;
+        margin-top:3%;
+        margin-left:6%;
+        list-style: none;
+      }
+
+      .hovertext1:before {
+        content: attr(data-hover);
+        visibility: hidden;
+        opacity: 0;
+        width: 100%;
+        text-align: justified;
+        border-radius: 5px;
+        padding: 5px 0;
+        transition: opacity 1s ease-in-out;
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        top: 110%;
+      }
+
+      .hovertext1:hover:before {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .tooltip {
+        position: relative;
+        display: inline-block;
+        border-bottom: 1px dotted black;
+      }
