@@ -12,7 +12,7 @@ The Oracle Dashboard pulls its data from five different database tables in an Or
 [it-reaches-out.sh](https://github.com/bculler17/Oracle_Bash_Scripts/blob/main/scripts/availability_monitor/it_reaches_out.sh)
 
                                         
-[tablespace_growth_trender.sh](https://github.com/bculler17/Oracle_Bash_Scripts/blob/main/scripts/tablespace_growth_trender.sh)
+[tablespace_growth_trender.sh](https://github.com/bculler17/Oracle_Bash_Scripts/blob/main/scripts/tablespace_growth/tablespace_growth_trender.sh)
 
 					
 How To Add New Servers to the Dashboard:
