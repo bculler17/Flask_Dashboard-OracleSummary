@@ -1,7 +1,7 @@
 # Flask Dashboard Database Summary
 I developed this dashboard to provide a high-level summary of a large Oracle environment: the characteristics, stats, and growth trends of multiple Oracle databases and database servers 
 
-DEMO can be viewed here: (coming soon)
+DEMO can be viewed here: https://www.bethculler.dev/demo/dashboard_demo_index.html
 
 Tools used: Python, SQL, HTML, CSS, Flask Web framework, Bash
 
